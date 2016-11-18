@@ -8,7 +8,7 @@ from io import BytesIO
 Emote = namedtuple('Emote', ['name', 'url'])
 
 def parse_image(element):
-    name = element.text
+    name = element.text.strip()
     url = element.find('img')['src']
     return Emote(name, url)
 
